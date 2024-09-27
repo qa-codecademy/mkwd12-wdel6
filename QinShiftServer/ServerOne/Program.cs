@@ -19,7 +19,6 @@ while (true)
     var client = listener.AcceptTcpClient();
     Console.WriteLine($"Accepted tcp client");
 
-
     using var stream = client.GetStream();
     byte[] buffer = new byte[8192];
     Span<byte> bytes = new(buffer);
@@ -29,7 +28,8 @@ while (true)
     var requestString = Encoding.UTF8.GetString(bytes);
     Console.WriteLine(requestString);
 
-    // Console.WriteLine(request);
+    Math.Sin(1.0);
+
     //var request = RequestProcessor.ProcessRequest(requestString);
     //var response = ActualProcessor.Process(request);
     //var output = OutputGenerator.MakeResponse(response);
