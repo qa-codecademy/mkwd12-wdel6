@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using ServerOne;
+
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -28,12 +30,14 @@ while (true)
     var requestString = Encoding.UTF8.GetString(bytes);
     Console.WriteLine(requestString);
 
-    Math.Sin(1.0);
-
     //var request = RequestProcessor.ProcessRequest(requestString);
     //var response = ActualProcessor.Process(request);
-    //var output = OutputGenerator.MakeResponse(response);
-    byte[] output = Encoding.UTF8.GetBytes("Hello from server");
+    var output = OutputGenerator.MakeResponse();
     stream.Write(output);
 }
 
+
+var x = new Response
+{
+    StatusCode = 200,
+}
