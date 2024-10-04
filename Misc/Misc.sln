@@ -5,9 +5,11 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Disposing", "Disposing\Disposing.csproj", "{8DB7FA4E-9A72-4FA8-B45D-F5D162F20F6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staticing", "Staticing\Staticing.csproj", "{B0E7AB58-B92F-4DF0-A53B-16FFF4C41F01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Staticing", "Staticing\Staticing.csproj", "{B0E7AB58-B92F-4DF0-A53B-16FFF4C41F01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recording", "Recording\Recording.csproj", "{D9903667-04EC-423F-AF76-31C74CDA4083}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recording", "Recording\Recording.csproj", "{D9903667-04EC-423F-AF76-31C74CDA4083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryManagement", "MemoryManagement\MemoryManagement.csproj", "{120A35B7-1149-434F-8709-5F4EDD366242}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D9903667-04EC-423F-AF76-31C74CDA4083}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9903667-04EC-423F-AF76-31C74CDA4083}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9903667-04EC-423F-AF76-31C74CDA4083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{120A35B7-1149-434F-8709-5F4EDD366242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{120A35B7-1149-434F-8709-5F4EDD366242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{120A35B7-1149-434F-8709-5F4EDD366242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{120A35B7-1149-434F-8709-5F4EDD366242}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

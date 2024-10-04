@@ -35,9 +35,3 @@ while (true)
     var output = OutputGenerator.MakeResponse();
     stream.Write(output);
 }
-
-
-var x = new Response
-{
-    StatusCode = 200,
-}

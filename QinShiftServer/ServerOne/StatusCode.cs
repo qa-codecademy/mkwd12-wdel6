@@ -81,34 +81,34 @@ namespace ServerOne
         #endregion
 
         #region Constants
-        public static StatusCode Continue => new StatusCode(100, "Continue");
-        public static StatusCode SwitchingProtocols => new StatusCode(101, "Switching Protocols");
-        public static StatusCode Processing { get; } = new StatusCode(102);
+        public static StatusCode Continue { get; } = new StatusCode(100, "Continue");
+        public static StatusCode SwitchingProtocols { get; } = new StatusCode(101, "Switching Protocols");
+        public static StatusCode Processing { get; } = new StatusCode(102, "Processing");
         public static StatusCode OK { get; } = new StatusCode(200, "OK");
-        public static StatusCode Created => new StatusCode(201);
-        public static StatusCode Accepted => new StatusCode(202);
-        public static StatusCode NoContent => new StatusCode(204);
-        public static StatusCode MovedPermanently => new StatusCode(301);
-        public static StatusCode Found => new StatusCode(302);
-        public static StatusCode SeeOther => new StatusCode(303);
-        public static StatusCode NotModified => new StatusCode(304);
-        public static StatusCode BadRequest => new StatusCode(400);
-        public static StatusCode Unauthorized => new StatusCode(401);
-        public static StatusCode Forbidden => new StatusCode(403);
-        public static StatusCode NotFound => new StatusCode(404);
-        public static StatusCode MethodNotAllowed => new StatusCode(405);
-        public static StatusCode NotAcceptable => new StatusCode(406);
-        public static StatusCode Conflict => new StatusCode(409);
-        public static StatusCode Gone => new StatusCode(410);
-        public static StatusCode ImATeapot => new StatusCode(418);
-        public static StatusCode UnprocessableEntity => new StatusCode(422);
-        public static StatusCode UnavailableForLegalReasons => new StatusCode(451);
-        public static StatusCode InternalServerError => new StatusCode(500);
-        public static StatusCode NotImplemented => new StatusCode(501);
-        public static StatusCode ServiceUnavailable => new StatusCode(503);
-        public static StatusCode HTTPVersionNotSupported => new StatusCode(505);
+        public static StatusCode Created { get; } = new StatusCode(201, "Created");
+        public static StatusCode Accepted { get; } = new StatusCode(202, "Accepted");
+        public static StatusCode NoContent { get; } = new StatusCode(204, "No Content");
+        public static StatusCode MovedPermanently { get; } = new StatusCode(301, "Moved Permanently");
+        public static StatusCode Found { get; } = new StatusCode(302, "Found");
+        public static StatusCode SeeOther { get; } = new StatusCode(303, "See Other");
+        public static StatusCode NotModified { get; } = new StatusCode(304, "Not Modified");
+        public static StatusCode BadRequest { get; } = new StatusCode(400, "Bad Request");
+        public static StatusCode Unauthorized { get; } = new StatusCode(401, "Unauthenticated");
+        public static StatusCode Forbidden { get; } = new StatusCode(403, "Not Allowed");
+        public static StatusCode NotFound { get; } = new StatusCode(404, "Not Found");
+        public static StatusCode MethodNotAllowed { get; } = new StatusCode(405, "Method Not Allowed");
+        public static StatusCode NotAcceptable { get; } = new StatusCode(406, "Not Acceptable");
+        public static StatusCode Conflict { get; } = new StatusCode(409, "Conflict");
+        public static StatusCode Gone { get; } = new StatusCode(410, "Gone");
+        public static StatusCode ImATeapot { get; } = new StatusCode(418, "I'm a teapot");
+        public static StatusCode UnprocessableEntity { get; } = new StatusCode(422, "Unprocessable Entity");
+        public static StatusCode UnavailableForLegalReasons { get; } = new StatusCode(451, "Unavailable For Legal Reasons");
+        public static StatusCode InternalServerError { get; } = new StatusCode(500, "Internal Server Error");
+        public static StatusCode NotImplemented { get; } = new StatusCode(501, "Not Implemented");
+        public static StatusCode ServiceUnavailable { get; } = new StatusCode(503, "Service Unavailable");
+        public static StatusCode HTTPVersionNotSupported { get; } = new StatusCode(505, "HTTP Version Not Supported");
 
-        private static Dictionary<int, StatusCode> _lookup = new Dictionary<int, StatusCode>
+        private static readonly Dictionary<int, StatusCode> _lookup = new()
         {
             { 100, Continue },
             { 101, SwitchingProtocols },
