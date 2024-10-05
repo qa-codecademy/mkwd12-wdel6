@@ -8,7 +8,16 @@ namespace ServerOne
 {
     internal class Response
     {
-        public StatusCode StatusCode { get; set; }
+        public StatusCode StatusCode { get; set; } = StatusCode.InternalServerError;
+
+        public string Body { get; set; } = string.Empty;
+
+        public Headers Headers { get; set; } = new Headers();
+
+        public Response()
+        {
+        }
+
     }
 
 }

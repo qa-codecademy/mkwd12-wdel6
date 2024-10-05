@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ServerOne
 {
-    internal struct StatusCode
+    internal struct StatusCode: IEquatable<StatusCode>
     {
         public int Code { get; private set; }
 
@@ -142,6 +142,11 @@ namespace ServerOne
         public override string ToString()
         {
             return $"{Code} {Description}";
+        }
+
+        public bool Equals(StatusCode other)
+        {
+            return Code == other.Code;
         }
 
         #region Implicit Operators

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Staticing", "Staticing\Stat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recording", "Recording\Recording.csproj", "{D9903667-04EC-423F-AF76-31C74CDA4083}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryManagement", "MemoryManagement\MemoryManagement.csproj", "{120A35B7-1149-434F-8709-5F4EDD366242}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryManagement", "MemoryManagement\MemoryManagement.csproj", "{120A35B7-1149-434F-8709-5F4EDD366242}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingStrings", "BuildingStrings\BuildingStrings.csproj", "{891BA6BB-A802-4274-B10A-0921B9A9C205}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{120A35B7-1149-434F-8709-5F4EDD366242}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{120A35B7-1149-434F-8709-5F4EDD366242}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{120A35B7-1149-434F-8709-5F4EDD366242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{891BA6BB-A802-4274-B10A-0921B9A9C205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{891BA6BB-A802-4274-B10A-0921B9A9C205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{891BA6BB-A802-4274-B10A-0921B9A9C205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{891BA6BB-A802-4274-B10A-0921B9A9C205}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

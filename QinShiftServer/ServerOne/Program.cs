@@ -25,13 +25,10 @@ while (true)
     byte[] buffer = new byte[8192];
     Span<byte> bytes = new(buffer);
     var byteCount = stream.Read(bytes);
-
-    Console.WriteLine(byteCount);
     var requestString = Encoding.UTF8.GetString(bytes);
-    Console.WriteLine(requestString);
 
-    //var request = RequestProcessor.ProcessRequest(requestString);
-    //var response = ActualProcessor.Process(request);
-    var output = OutputGenerator.MakeResponse();
+    var request = RequestProcessor.ProcessRequest(requestString);
+    var response = ActualProcessor.Process(request);
+    var output = OutputGenerator.MakeResponse(response);
     stream.Write(output);
 }
