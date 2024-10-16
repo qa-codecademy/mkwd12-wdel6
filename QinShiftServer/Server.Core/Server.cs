@@ -9,6 +9,14 @@ namespace ServerTwo.Core
     public class Server
     {
         private ActualProcessor _pipelineProcessor = new ActualProcessor();
+
+        public void RegisterController<T>() where T : IController, new()
+        {
+            var controller = new T();
+            var processor = new ControllerProcessor(controller);
+            _pipelineProcessor.AddProcessor(processor);
+        }
+
         public void RegisterProcessor(IPipelineProcessor processor)
         {
             _pipelineProcessor.AddProcessor(processor);

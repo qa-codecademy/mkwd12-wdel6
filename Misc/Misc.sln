@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryManagement", "MemoryM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingStrings", "BuildingStrings\BuildingStrings.csproj", "{891BA6BB-A802-4274-B10A-0921B9A9C205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptional", "Exceptional\Exceptional.csproj", "{8383A1BA-7BD7-44C0-8E25-6426BAD7C1CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptional", "Exceptional\Exceptional.csproj", "{8383A1BA-7BD7-44C0-8E25-6426BAD7C1CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlaggingEnums", "FlaggingEnums\FlaggingEnums.csproj", "{B825E0BB-0E55-4E49-BEA4-5407D25AE773}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8383A1BA-7BD7-44C0-8E25-6426BAD7C1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8383A1BA-7BD7-44C0-8E25-6426BAD7C1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8383A1BA-7BD7-44C0-8E25-6426BAD7C1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B825E0BB-0E55-4E49-BEA4-5407D25AE773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B825E0BB-0E55-4E49-BEA4-5407D25AE773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B825E0BB-0E55-4E49-BEA4-5407D25AE773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B825E0BB-0E55-4E49-BEA4-5407D25AE773}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

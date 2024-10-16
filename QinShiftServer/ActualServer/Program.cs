@@ -6,6 +6,7 @@ Console.WriteLine("Hello, Server World!");
 var server = new ServerTwo.Core.Server();
 
 server.RegisterProcessor(new AddPipelineProcessor());
+server.RegisterController<CalculatorController>();
 
 server.Start();
 
