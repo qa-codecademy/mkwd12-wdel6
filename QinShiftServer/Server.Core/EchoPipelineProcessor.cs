@@ -15,7 +15,7 @@ namespace ServerTwo.Core
             return true;
         }
 
-        public Response Process(Request request)
+        public BaseResponse Process(Request request)
         {
             var headersOutput = new StringBuilder(@"<div>
 <h2>Headers:</h2>

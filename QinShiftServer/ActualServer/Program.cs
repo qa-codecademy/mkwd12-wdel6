@@ -8,5 +8,7 @@ var server = new ServerTwo.Core.Server();
 server.RegisterProcessor(new AddPipelineProcessor());
 server.RegisterController<CalculatorController>();
 
+server.RegisterStaticRoot("public");
+
 server.Start();
 

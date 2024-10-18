@@ -13,4 +13,8 @@
     <ProjectReference Include="..\ServerTwo.Interface\ServerTwo.Interface.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="public\" />
+  </ItemGroup>
+
 </Project>

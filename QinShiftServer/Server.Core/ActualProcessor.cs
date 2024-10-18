@@ -15,7 +15,7 @@ internal class ActualProcessor
         _processors.Insert(_processors.Count-1, processor);
     }
 
-    internal Response Process(Request request)
+    internal BaseResponse Process(Request request)
     {
         try
         {

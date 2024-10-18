@@ -22,6 +22,11 @@ namespace ServerTwo.Core
             _pipelineProcessor.AddProcessor(processor);
         }
 
+        public void RegisterStaticRoot(string path)
+        {
+            _pipelineProcessor.AddProcessor(new StaticFileProcessor(path));
+        }
+
         /// <summary>
         /// This is a blocking operation. It will start the server and wait for connections.
         /// </summary>

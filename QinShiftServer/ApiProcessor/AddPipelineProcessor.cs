@@ -15,7 +15,7 @@ namespace ApiProcessor
             return request.Path.StartsWith("/add");
         }
 
-        public Response Process(Request request)
+        public BaseResponse Process(Request request)
         {
             Console.WriteLine(string.Join(" -- ", request.Path.Split("/")));
             var result = request.Path.Split("/") switch

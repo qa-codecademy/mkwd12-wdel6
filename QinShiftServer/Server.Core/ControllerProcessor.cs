@@ -61,7 +61,7 @@ namespace ServerTwo.Core
             return routes.Any(r => r.Matches(request.Path));
         }
 
-        public Response Process(Request request)
+        public BaseResponse Process(Request request)
         {
             var requestParts = request.Path.Split("/");
             var methodName = requestParts[2];

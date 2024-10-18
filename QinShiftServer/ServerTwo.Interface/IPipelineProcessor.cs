@@ -9,6 +9,6 @@ namespace ServerTwo.Interface
     public interface IPipelineProcessor
     {
         bool CanProcess(Request request);
-        Response Process(Request request);
+        BaseResponse Process(Request request);
     }
 }
