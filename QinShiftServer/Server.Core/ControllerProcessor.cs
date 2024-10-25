@@ -1,4 +1,5 @@
 ﻿using ServerTwo.Interface;
+using ServerTwo.Interface.Attributes;
 
 using System;
 using System.Collections.Generic;
@@ -7,12 +8,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+using HttpMethod = ServerTwo.Interface.HttpMethod;
+
 namespace ServerTwo.Core
 {
     internal class ControllerProcessor(IController controller) : IPipelineProcessor
     {
-
-
         public IController Controller { get; } = controller;
 
         private string GetControllerName()
@@ -23,26 +24,31 @@ namespace ServerTwo.Core
             {
                 return name;
             }
-            return name.Substring(0, cindex);
+            return name[..cindex];
         }
 
-        private List<string> GetMethodNames()
+        private List<MethodInfo> GetMethods()
         {
             return Controller
                 .GetType()
                 .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-                .Select(m => m.Name)
                 .ToList();
         }
 
-        private List<Route> GetControllerRoutes()
+        private IEnumerable<Route> GetControllerRoutes()
         {
             var name = GetControllerName();
-            var methods = GetMethodNames();
+            var methods = GetMethods();
 
-            return methods
-                .Select(m => new Route($"{name}/{m}"))
-                .ToList();
+            foreach (var method in methods) {
+                var (attribute, httpMethod) = MethodResolver.ResolveAttribute(method);
+                if (string.IsNullOrEmpty(attribute?.EndpointName))
+                {
+                    yield return new Route($"{name}/{method.Name}", httpMethod, method.Name);
+                    continue;
+                }
+                yield return new Route($"{name}/{attribute.EndpointName}", httpMethod, method.Name);
+            }
         }
 
 
@@ -58,13 +64,23 @@ namespace ServerTwo.Core
              */
 
             var routes = GetControllerRoutes();
-            return routes.Any(r => r.Matches(request.Path));
+            var result = routes.Any(r => r.Matches(request));
+            return result;
         }
 
         public BaseResponse Process(Request request)
         {
             var requestParts = request.Path.Split("/");
-            var methodName = requestParts[2];
+            var endpointName = requestParts[2];
+
+            var routes = GetControllerRoutes();
+            var route = routes.First(r => r.Matches(request));
+            if (route == null)
+            {
+                throw new QinshiftServerException("Route not found");
+            }
+
+            var methodName = route.ProcessorName;
             var methodInfo = Controller.GetType().GetMethod(methodName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
             if (methodInfo == null)
             {

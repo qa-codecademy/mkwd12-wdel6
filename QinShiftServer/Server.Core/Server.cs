@@ -9,10 +9,15 @@ namespace ServerTwo.Core
     public class Server
     {
         private ActualProcessor _pipelineProcessor = new ActualProcessor();
+        private ControllerFactory _controllerFactory = new ControllerFactory();
 
-        public void RegisterController<T>() where T : IController, new()
+        public void RegisterController<T>() where T : IController
         {
-            var controller = new T();
+            var controller = _controllerFactory.MakeController<T>();
+            if (controller == null)
+            {
+                throw new QinshiftServerException("Controller could not be created");
+            }
             var processor = new ControllerProcessor(controller);
             _pipelineProcessor.AddProcessor(processor);
         }
@@ -20,6 +25,16 @@ namespace ServerTwo.Core
         public void RegisterProcessor(IPipelineProcessor processor)
         {
             _pipelineProcessor.AddProcessor(processor);
+        }
+
+        public void RegisterService<TInterface, TImplementation>()
+        {
+            _controllerFactory.RegisterService<TInterface, TImplementation>();
+        }
+
+        public void RegisterService<T>()
+        {
+            _controllerFactory.RegisterService<T, T>();
         }
 
         public void RegisterStaticRoot(string path)

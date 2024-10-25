@@ -1,4 +1,5 @@
 ﻿using ServerTwo.Interface;
+using ServerTwo.Interface.Attributes;
 
 using System;
 using System.Collections.Generic;
@@ -10,19 +11,28 @@ namespace ApiProcessor
 {
     public class CalculatorController : IController
     {
-        public int Add(int first, int second)
+        private readonly ICalculatorService _service;
+
+        public CalculatorController(ICalculatorService service)
         {
-            return first + second;
+            _service = service;
         }
 
+        [HttpGet("add")]
+        public int AddTwoIntegers(int first, int second)
+        {
+            return _service.Add(first, second);
+        }
+
+        [HttpPost]
         public int Double(int number)
         {
-            return number * 2;
+            return _service.Double(number);
         }
 
         public int Subtract(int first, int second)
         {
-            return first - second;
+            return _service.Subtract(first, second);
         }
     }
 }
